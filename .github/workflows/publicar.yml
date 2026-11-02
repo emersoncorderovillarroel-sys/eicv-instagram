@@ -1,0 +1,46 @@
+name: Publicación automática EICV
+on:
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: Validar conexión o publicar la siguiente pieza
+        type: choice
+        options: [validar, publicar]
+        default: validar
+  schedule:
+    - cron: '0 10 * * 1,3,5'
+      timezone: America/Santiago
+permissions:
+  contents: write
+concurrency:
+  group: eicv-instagram
+  cancel-in-progress: false
+jobs:
+  publicar:
+    if: github.event_name == 'workflow_dispatch' || vars.PUBLICAR_ACTIVO == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Verificar protecciones del publicador
+        run: python -m unittest -v test_publicar.py
+      - name: Configurar registro de publicaciones
+        run: |
+          git config user.name 'EICV Social Bot'
+          git config user.email 'actions@users.noreply.github.com'
+      - name: Comprobar o publicar
+        env:
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          IG_USER_ID: '17841457244538530'
+          IG_USERNAME: eicvconsultores
+          IG_API_BASE: ${{ vars.IG_API_BASE || 'auto' }}
+          IG_API_VERSION: ${{ vars.IG_API_VERSION || 'v26.0' }}
+          PUBLIC_BASE_URL: ${{ vars.PUBLIC_BASE_URL }}
+          MODO: ${{ github.event_name == 'workflow_dispatch' && inputs.modo || 'publicar' }}
+        run: python publicar.py --modo "$MODO"
