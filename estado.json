@@ -1,4 +1,9 @@
 {
   "next_index": 0,
-  "published": []
+  "published": [],
+  "pending": {
+    "index": 0,
+    "container_id": "17985863120908152",
+    "phase": "prepared"
+  }
 }
