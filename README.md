@@ -15,7 +15,9 @@ El ID de cuenta esperado es `17841457244538530`; se comprueba que el usuario aut
 
 ## Calendario
 
-Lunes, miércoles y viernes, **10:00 America/Santiago**. GitHub puede retrasar la ejecución. Las 12 piezas se usan una vez y luego se detiene el envío: no se generan contenidos nuevos ni se repiten los anteriores.
+Todos los días, **10:00 America/Santiago**. GitHub puede retrasar la ejecución. Las 12 piezas se usan una vez y luego se detiene el envío: no se generan contenidos nuevos ni se repiten los anteriores.
+
+El publicador actual envía imágenes al feed. La primera pieza incorpora la nueva línea visual fotográfica de EICV, con chalecos verde fluorescente. Reels e historias requieren piezas y soporte específicos, aún no activados.
 
 La ejecución manual usa **validar** por defecto y no crea publicaciones. El modo **publicar** envía la siguiente pieza, incluso si el calendario está pausado. `PUBLICAR_ACTIVO` controla solo las ejecuciones programadas.
 
