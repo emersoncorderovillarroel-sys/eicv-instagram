@@ -2,10 +2,11 @@ import copy
 import json
 import tempfile
 import unittest
+from datetime import datetime, timezone
 from pathlib import Path
 from unittest.mock import Mock
 
-from publicar import ErrorSeguro, Instagram, ejecutar
+from publicar import ErrorSeguro, Instagram, ejecutar, publicado_hoy
 
 
 class PublicadorTests(unittest.TestCase):
@@ -99,6 +100,25 @@ class PublicadorTests(unittest.TestCase):
         self.guardar({'next_index': 1, 'published': [{'item': 1, 'media_id': 'm1'}]})
         ejecutar('publicar', self.root, self.api, Mock(), self.images)
         self.api.comprobar_cuenta.assert_not_called()
+
+    def test_segundo_disparo_del_dia_no_envia_siguiente_pieza(self):
+        self.state['published'] = [{'item': 0, 'media_id': 'previo', 'published_at': datetime.now(timezone.utc).isoformat()}]
+        self.guardar(self.state)
+        persist = Mock()
+        ejecutar('publicar', self.root, self.api, persist, self.images)
+        self.api.comprobar_cuenta.assert_not_called()
+        self.api.solicitar.assert_not_called()
+        persist.assert_not_called()
+        self.assertEqual(json.loads((self.root / 'estado.json').read_text())['next_index'], 0)
+
+    def test_dia_chileno_no_se_confunde_con_medianoche_utc(self):
+        state = {'published': [{'published_at': '2026-11-03T01:30:00+00:00'}]}
+        self.assertTrue(publicado_hoy(state, datetime(2026, 11, 2, 23, tzinfo=timezone.utc)))
+        self.assertFalse(publicado_hoy(state, datetime(2026, 11, 3, 13, tzinfo=timezone.utc)))
+
+    def test_fecha_invalida_bloquea_para_no_duplicar(self):
+        with self.assertRaisesRegex(ErrorSeguro, 'fecha verificable'):
+            publicado_hoy({'published': [{'published_at': 'incorrecta'}]})
 
 
 if __name__ == '__main__':

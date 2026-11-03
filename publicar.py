@@ -6,6 +6,7 @@ import subprocess
 import sys
 import time
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 from urllib.parse import urlparse, urlencode
 from urllib.request import Request, build_opener, HTTPRedirectHandler, urlopen
@@ -49,6 +50,22 @@ ROOT = Path(__file__).resolve().parent
 
 class ErrorSeguro(Exception):
     pass
+
+
+def publicado_hoy(state, now=None):
+    """Un envío confirmado por día civil en Chile, incluso con varios disparadores."""
+    chile = ZoneInfo('America/Santiago')
+    today = (now or datetime.now(timezone.utc)).astimezone(chile).date()
+    for record in state.get('published', []):
+        try:
+            stamp = datetime.fromisoformat(record['published_at'].replace('Z', '+00:00'))
+            if stamp.tzinfo is None:
+                raise ValueError('Fecha sin zona')
+        except (KeyError, TypeError, ValueError, AttributeError):
+            raise ErrorSeguro('Hay una publicación sin fecha verificable. Revisar el registro antes de continuar.') from None
+        if stamp.astimezone(chile).date() == today:
+            return True
+    return False
 
 
 def escribir_estado(state, root=ROOT):
@@ -141,6 +158,9 @@ def ejecutar(mode, root=ROOT, api=None, persist=escribir_estado, image_check=com
         raise ErrorSeguro('Hay un envío pendiente de conciliación. Comprueba Instagram antes de reintentar; se bloquea para evitar duplicados.')
     if pending and pending.get('index') != idx:
         raise ErrorSeguro('El registro pendiente no coincide con el calendario.')
+    if mode == 'publicar' and publicado_hoy(state):
+        print('Ya hay una publicación confirmada hoy en Chile. No se envía otra pieza.')
+        return
     if api is None:
         required = ('IG_ACCESS_TOKEN', 'IG_USER_ID', 'PUBLIC_BASE_URL')
         missing = [key for key in required if not os.getenv(key)]

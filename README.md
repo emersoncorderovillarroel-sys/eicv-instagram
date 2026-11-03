@@ -15,7 +15,7 @@ El ID de cuenta esperado es `17841457244538530`; se comprueba que el usuario aut
 
 ## Calendario
 
-Todos los días, **10:00 America/Santiago**. GitHub puede retrasar la ejecución. Las 12 piezas se usan una vez y luego se detiene el envío: no se generan contenidos nuevos ni se repiten los anteriores.
+Todos los días, **10:00 America/Santiago**. GitHub puede retrasar u omitir un disparador; no garantiza una hora exacta. Hay comprobaciones de recuperación a los minutos 17 y 47 entre las 10:00 y las 12:59 de Chile. Se comprueba el registro antes de enviar y se permite como máximo una publicación confirmada por día civil de Chile, tanto en ejecución manual como programada. Las 12 piezas se usan una vez y luego se detiene el envío: no se generan contenidos nuevos ni se repiten los anteriores.
 
 El publicador actual envía imágenes al feed. Las 12 piezas incorporan la línea visual fotográfica de EICV, con chalecos verde fluorescente; cada texto combina consejos prácticos y una invitación a contactar a EICV para abordar brechas preventivas. Reels e historias requieren piezas y soporte específicos, aún no activados.
 
