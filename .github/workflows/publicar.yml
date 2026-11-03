@@ -10,6 +10,8 @@ on:
   schedule:
     - cron: '0 10 * * *'
       timezone: America/Santiago
+    - cron: '17,47 10-12 * * *'
+      timezone: America/Santiago
 permissions:
   contents: write
 concurrency:
