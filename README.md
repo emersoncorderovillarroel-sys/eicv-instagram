@@ -17,7 +17,7 @@ El ID de cuenta esperado es `17841457244538530`; se comprueba que el usuario aut
 
 Todos los días, **10:00 America/Santiago**. GitHub puede retrasar la ejecución. Las 12 piezas se usan una vez y luego se detiene el envío: no se generan contenidos nuevos ni se repiten los anteriores.
 
-El publicador actual envía imágenes al feed. La primera pieza incorpora la nueva línea visual fotográfica de EICV, con chalecos verde fluorescente. Reels e historias requieren piezas y soporte específicos, aún no activados.
+El publicador actual envía imágenes al feed. Las 12 piezas incorporan la línea visual fotográfica de EICV, con chalecos verde fluorescente; cada texto combina consejos prácticos y una invitación a contactar a EICV para abordar brechas preventivas. Reels e historias requieren piezas y soporte específicos, aún no activados.
 
 La ejecución manual usa **validar** por defecto y no crea publicaciones. El modo **publicar** envía la siguiente pieza, incluso si el calendario está pausado. `PUBLICAR_ACTIVO` controla solo las ejecuciones programadas.
 
@@ -28,3 +28,14 @@ La ejecución manual usa **validar** por defecto y no crea publicaciones. El mod
 Ante ese bloqueo, revisar primero el perfil y el contenedor en Meta. Si la publicación existe, registrar su identificador y avanzar el índice. Si se confirma que no se publicó y que no puede terminar después, retirar el pendiente mediante un cambio revisado. No borrar el registro sin esa comprobación.
 
 Los tokens pueden ser revocados o perder permisos. Las fallas quedan registradas en Actions sin imprimir la credencial ni la respuesta completa de la API. Si falla la comprobación de cuenta, no se publica. El repositorio no contiene ninguna credencial.
+
+## Campaña fotográfica · 12 publicaciones
+
+Frecuencia diaria a las **10:00 de Chile**. Todas las imágenes son recreaciones visuales. Cada publicación incluye consejos prácticos, una invitación a contar con EICV y sus datos de contacto.
+
+| Publicaciones | | |
+|---|---|---|
+| **01. Seguridad que se transforma en gestión**<br>![Publicación 01](docs/posts/01.jpg) | **02. Una matriz archivada no controla los riesgos**<br>![Publicación 02](docs/posts/02.jpg) | **03. ¿Tu organización sabe cómo responder?**<br>![Publicación 03](docs/posts/03.jpg) |
+| **04. Tres hábitos para trabajar más seguro**<br>![Publicación 04](docs/posts/04.jpg) | **05. El EPP es la última barrera**<br>![Publicación 05](docs/posts/05.jpg) | **06. Cada empresa tiene riesgos distintos**<br>![Publicación 06](docs/posts/06.jpg) |
+| **07. Una inspección debe generar acciones**<br>![Publicación 07](docs/posts/07.jpg) | **08. Capacitar no es solo firmar asistencia**<br>![Publicación 08](docs/posts/08.jpg) | **09. ¿Cuándo revisaste tus vías de evacuación?**<br>![Publicación 09](docs/posts/09.jpg) |
+| **10. Antes de usar una máquina, verifica**<br>![Publicación 10](docs/posts/10.jpg) | **11. La mejora continua se mide**<br>![Publicación 11](docs/posts/11.jpg) | **12. Gestionamos prevención en tu empresa**<br>![Publicación 12](docs/posts/12.jpg) |

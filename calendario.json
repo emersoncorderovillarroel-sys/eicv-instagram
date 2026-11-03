@@ -1,14 +1,146 @@
 [
-{"category":"EICV Consultores","title":"Seguridad que se transforma en gestión","bullets":["Asesoría preventiva especializada.","Soluciones adaptadas a cada empresa.","Acompañamiento técnico continuo."],"caption":"En EICV Consultores trabajamos para convertir la prevención en acciones concretas: identificar riesgos, implementar controles y fortalecer la gestión de Seguridad y Salud en el Trabajo. Escríbenos: contacto@eicvconsultores.cl\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral"},
-{"category":"Gestión preventiva","title":"Una matriz archivada no controla los riesgos","bullets":["Identifica peligros reales.","Prioriza los riesgos relevantes.","Verifica los controles en terreno."],"caption":"Una matriz de riesgos debe representar las actividades efectivamente realizadas y orientar la aplicación de medidas de control. No basta con archivarla.\n\n#GestionPreventiva #EICVConsultores #SeguridadYSalud"},
-{"category":"Emergencias","title":"¿Tu organización sabe cómo responder?","bullets":["Define roles y responsabilidades.","Revisa rutas y zonas seguras.","Realiza ejercicios y mejora el plan."],"caption":"Un plan de emergencia es útil cuando las personas comprenden qué hacer, cómo comunicarse y hacia dónde dirigirse. Revísalo y ejercítalo periódicamente.\n\n#Emergencias #GestionDeRiesgos #EICVConsultores"},
-{"category":"Seguridad laboral","title":"Tres hábitos que evitan incidentes","bullets":["Inspecciona antes de comenzar.","Comunica condiciones peligrosas.","Detén y consulta ante dudas críticas."],"caption":"La prevención se sostiene con decisiones cotidianas. Antes de iniciar una tarea, comprueba las condiciones, informa los peligros y asegúrate de comprender el procedimiento.\n\n#CulturaPreventiva #EICVConsultores #TrabajoSeguro"},
-{"category":"Prevención aplicada","title":"El EPP es la última barrera","bullets":["Primero evalúa eliminar el peligro.","Prioriza controles técnicos.","Usa EPP adecuados al riesgo residual."],"caption":"Los elementos de protección personal son importantes, pero no sustituyen medidas de eliminación, sustitución o control del peligro. La selección debe responder a una evaluación de riesgos.\n\n#EPP #PrevencionDeRiesgos #EICVConsultores"},
-{"category":"Consultoría","title":"Cada empresa tiene riesgos distintos","bullets":["Conocemos tus procesos.","Diseñamos medidas viables.","Medimos resultados y mejoramos."],"caption":"No existe una solución preventiva idéntica para todas las empresas. En EICV Consultores orientamos la gestión a las características reales de cada operación. Contacto: contacto@eicvconsultores.cl\n\n#AsesoriaSST #EICVConsultores #Empresas"},
-{"category":"Inspecciones","title":"Una inspección debe generar acciones","bullets":["Registra hallazgos verificables.","Asigna responsables y plazos.","Confirma el cierre y su eficacia."],"caption":"Detectar una condición insegura es solo el comienzo. El valor de una inspección está en corregirla y comprobar que el control permanezca operativo.\n\n#Inspecciones #SeguridadLaboral #EICVConsultores"},
-{"category":"Capacitaciones","title":"Capacitar no es solo firmar asistencia","bullets":["Explica riesgos de la tarea.","Demuestra prácticas seguras.","Comprueba la comprensión."],"caption":"La formación preventiva debe ser pertinente a las tareas y comprensible para quienes las realizan. Un registro de asistencia no reemplaza el aprendizaje aplicado.\n\n#Capacitacion #GestionPreventiva #EICVConsultores"},
-{"category":"Emergencias","title":"¿Cuándo revisaste tus vías de evacuación?","bullets":["Mantén rutas despejadas.","Revisa la señalización.","Considera movilidad y aforo reales."],"caption":"Las rutas de evacuación requieren verificación periódica. Cambios en la ocupación o en el mobiliario pueden modificar las condiciones de salida.\n\n#Evacuacion #Emergencias #EICVConsultores"},
-{"category":"Riesgos críticos","title":"Antes de usar una máquina, verifica","bullets":["Protecciones en su lugar.","Instrucciones de operación claras.","Parada de emergencia operativa."],"caption":"Antes de operar maquinaria, verifica que sus resguardos y dispositivos de seguridad estén en condiciones y que el personal tenga la formación correspondiente.\n\n#SeguridadDeMaquinas #EICVConsultores #Prevencion"},
-{"category":"Gestión preventiva","title":"La mejora continua se mide","bullets":["Monitorea acciones pendientes.","Analiza incidentes y tendencias.","Comprueba controles y resultados."],"caption":"La prevención necesita seguimiento: responsables, fechas, indicadores y evidencia de implementación. Lo que se verifica puede mejorar.\n\n#SST #MejoraContinua #EICVConsultores"},
-{"category":"EICV Consultores","title":"Gestionamos prevención en tu empresa","bullets":["Evaluación de riesgos.","Planes de emergencia.","Gestión preventiva y asesoría técnica."],"caption":"¿Necesitas fortalecer la Seguridad y Salud en el Trabajo en tu organización? En EICV Consultores desarrollamos soluciones prácticas y especializadas.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#EICVConsultores #AsesoriaPrevencion #SeguridadLaboral"}
+  {
+    "category": "EICV Consultores",
+    "title": "Seguridad que se transforma en gestión",
+    "bullets": [
+      "Recorre tus áreas de trabajo y escucha a quienes realizan las tareas.",
+      "Prioriza las brechas que puedan tener consecuencias más graves.",
+      "Asigna responsables y comprueba las mejoras."
+    ],
+    "caption": "La prevención se construye con decisiones y controles que funcionan en terreno. Identificar los peligros, priorizar los riesgos y hacer seguimiento a las mejoras permite orientar los esfuerzos donde más se necesitan.\n\nConsejos para tu empresa:\n• Recorre tus áreas de trabajo y escucha a quienes realizan las tareas.\n• Prioriza las brechas que puedan tener consecuencias más graves.\n• Asigna responsables y comprueba las mejoras.\n\n¿Necesitas ordenar tu gestión preventiva? Cuenta con EICV Consultores para identificar brechas y definir un plan de acción ajustado a tu empresa.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Parte por los riesgos de mayor impacto.",
+    "cta": "Cuenta con EICV para cerrar tus brechas preventivas."
+  },
+  {
+    "category": "Gestión preventiva",
+    "title": "Una matriz archivada no controla los riesgos",
+    "bullets": [
+      "Contrasta la matriz con las tareas que efectivamente se realizan.",
+      "Recoge la experiencia de las personas trabajadoras.",
+      "Verifica que los controles estén implementados y sean eficaces."
+    ],
+    "caption": "Consejos para tu empresa:\n• Contrasta la matriz con las tareas que efectivamente se realizan.\n• Recoge la experiencia de las personas trabajadoras.\n• Verifica que los controles estén implementados y sean eficaces.\n\n¿Tu matriz refleja lo que realmente ocurre en terreno? En EICV te ayudamos a identificar peligros, evaluar riesgos y convertir los hallazgos en medidas de control.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Revisa los riesgos reales de cada tarea.",
+    "cta": "Con EICV, transforma brechas en acciones."
+  },
+  {
+    "category": "Emergencias",
+    "title": "¿Tu organización sabe cómo responder?",
+    "bullets": [
+      "Aclara quién coordina, quién comunica y quién apoya la evacuación.",
+      "Comprueba las rutas y los puntos de encuentro definidos en tu plan.",
+      "Realiza ejercicios y convierte sus resultados en mejoras."
+    ],
+    "caption": "Consejos para tu empresa:\n• Aclara quién coordina, quién comunica y quién apoya la evacuación.\n• Comprueba las rutas y los puntos de encuentro definidos en tu plan.\n• Realiza ejercicios y convierte sus resultados en mejoras.\n\n¿Tu equipo sabría qué hacer ante una emergencia? Cuenta con EICV para revisar tu plan, definir responsabilidades y preparar ejercicios adaptados a tu organización.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Define roles y ejercita tu respuesta.",
+    "cta": "Prepara tu plan de emergencia con EICV."
+  },
+  {
+    "category": "Seguridad laboral",
+    "title": "Tres hábitos para trabajar más seguro",
+    "bullets": [
+      "Revisa las condiciones antes de comenzar.",
+      "Comunica los peligros y las desviaciones que detectes.",
+      "Ante una condición peligrosa, detén la tarea y consulta por el conducto definido."
+    ],
+    "caption": "Consejos para tu empresa:\n• Revisa las condiciones antes de comenzar.\n• Comunica los peligros y las desviaciones que detectes.\n• Ante una condición peligrosa, detén la tarea y consulta por el conducto definido.\n\nLos hábitos seguros necesitan respaldo: instrucciones claras, condiciones adecuadas y seguimiento. EICV te acompaña a fortalecer las prácticas preventivas de tu equipo.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Inspecciona, comunica y verifica.",
+    "cta": "Fortalece tu cultura preventiva con EICV."
+  },
+  {
+    "category": "Prevención aplicada",
+    "title": "El EPP es la última barrera",
+    "bullets": [
+      "Evalúa primero eliminar el peligro o sustituirlo por una alternativa más segura.",
+      "Prioriza controles técnicos y complementa con medidas organizativas.",
+      "Selecciona el EPP según el riesgo residual y verifica su ajuste y estado."
+    ],
+    "caption": "Consejos para tu empresa:\n• Evalúa primero eliminar el peligro o sustituirlo por una alternativa más segura.\n• Prioriza controles técnicos y complementa con medidas organizativas.\n• Selecciona el EPP según el riesgo residual y verifica su ajuste y estado.\n\n¿Tus controles dependen solo del uso de EPP? En EICV te ayudamos a revisar las medidas existentes y priorizar soluciones que actúen sobre el peligro.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Controla el peligro desde su origen.",
+    "cta": "Evalúa tus controles junto a EICV."
+  },
+  {
+    "category": "Consultoría",
+    "title": "Cada empresa tiene riesgos distintos",
+    "bullets": [
+      "Considera las tareas habituales y también las no rutinarias.",
+      "Incluye los cambios de proceso, equipos y condiciones de trabajo.",
+      "Define prioridades y acciones compatibles con tu operación."
+    ],
+    "caption": "Consejos para tu empresa:\n• Considera las tareas habituales y también las no rutinarias.\n• Incluye los cambios de proceso, equipos y condiciones de trabajo.\n• Define prioridades y acciones compatibles con tu operación.\n\nTu operación tiene procesos, personas y desafíos propios. Cuenta con EICV para reconocer tus brechas preventivas y diseñar medidas viables para tu realidad.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Adapta la prevención a tu operación.",
+    "cta": "Diseña soluciones con EICV Consultores."
+  },
+  {
+    "category": "Inspecciones",
+    "title": "Una inspección debe generar acciones",
+    "bullets": [
+      "Describe el hallazgo y su ubicación con claridad.",
+      "Acuerda un responsable y un plazo de corrección.",
+      "Comprueba que la acción se implementó y que controla el riesgo."
+    ],
+    "caption": "Consejos para tu empresa:\n• Describe el hallazgo y su ubicación con claridad.\n• Acuerda un responsable y un plazo de corrección.\n• Comprueba que la acción se implementó y que controla el riesgo.\n\n¿Las observaciones de tus inspecciones se repiten? EICV te ayuda a organizar los hallazgos, priorizar las correcciones y verificar el cierre de tus brechas preventivas.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Asigna responsables y verifica el cierre.",
+    "cta": "Convierte hallazgos en mejoras con EICV."
+  },
+  {
+    "category": "Capacitaciones",
+    "title": "Capacitar no es solo firmar asistencia",
+    "bullets": [
+      "Explica los riesgos con ejemplos del puesto de trabajo.",
+      "Incluye demostraciones y participación de las personas.",
+      "Comprueba la comprensión y refuerza lo que aún genera dudas."
+    ],
+    "caption": "Consejos para tu empresa:\n• Explica los riesgos con ejemplos del puesto de trabajo.\n• Incluye demostraciones y participación de las personas.\n• Comprueba la comprensión y refuerza lo que aún genera dudas.\n\nUna capacitación útil conecta los riesgos con la tarea real. Cuenta con EICV para apoyar actividades formativas pertinentes y reforzar la comprensión de tu equipo.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Demuestra y comprueba lo aprendido.",
+    "cta": "Refuerza tu capacitación con EICV."
+  },
+  {
+    "category": "Emergencias",
+    "title": "¿Cuándo revisaste tus vías de evacuación?",
+    "bullets": [
+      "Evita almacenar materiales en las rutas de evacuación.",
+      "Comprueba que la señalización corresponda al recorrido real.",
+      "Considera a las personas que puedan requerir apoyo para evacuar."
+    ],
+    "caption": "Consejos para tu empresa:\n• Evita almacenar materiales en las rutas de evacuación.\n• Comprueba que la señalización corresponda al recorrido real.\n• Considera a las personas que puedan requerir apoyo para evacuar.\n\n¿Cambió la distribución de tu recinto o su ocupación? En EICV te ayudamos a revisar las condiciones de evacuación y detectar brechas que requieren solución.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Mantén libres las rutas de salida.",
+    "cta": "Revisa tu evacuación junto a EICV."
+  },
+  {
+    "category": "Riesgos críticos",
+    "title": "Antes de usar una máquina, verifica",
+    "bullets": [
+      "Comprueba que los resguardos estén instalados y en buen estado.",
+      "Aplica las verificaciones de seguridad previstas por el fabricante y el procedimiento.",
+      "Si detectas una falla, no operes y comunícala por el conducto definido."
+    ],
+    "caption": "Consejos para tu empresa:\n• Comprueba que los resguardos estén instalados y en buen estado.\n• Aplica las verificaciones de seguridad previstas por el fabricante y el procedimiento.\n• Si detectas una falla, no operes y comunícala por el conducto definido.\n\n¿Necesitas revisar las condiciones de seguridad de tus equipos? EICV te apoya en la identificación de brechas y en la definición de medidas preventivas para su operación.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Verifica resguardos antes de operar.",
+    "cta": "Identifica tus brechas junto a EICV."
+  },
+  {
+    "category": "Gestión preventiva",
+    "title": "La mejora continua se mide",
+    "bullets": [
+      "Mantén un registro de acciones, responsables y fechas.",
+      "Revisa qué medidas siguen pendientes y por qué.",
+      "Comprueba resultados en terreno, además de revisar documentos."
+    ],
+    "caption": "Consejos para tu empresa:\n• Mantén un registro de acciones, responsables y fechas.\n• Revisa qué medidas siguen pendientes y por qué.\n• Comprueba resultados en terreno, además de revisar documentos.\n\n¿Tienes acciones pendientes sin seguimiento? Cuenta con EICV para ordenar tus compromisos, revisar avances y comprobar que las mejoras preventivas se sostengan.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Haz seguimiento a tus compromisos.",
+    "cta": "Ordena tu gestión preventiva con EICV."
+  },
+  {
+    "category": "EICV Consultores",
+    "title": "Gestionamos prevención en tu empresa",
+    "bullets": [
+      "Identifica qué aspectos requieren atención.",
+      "Prioriza según los riesgos y tu operación.",
+      "Define acciones y verifica su implementación."
+    ],
+    "caption": "Consejos para tu empresa:\n• Identifica qué aspectos requieren atención.\n• Prioriza según los riesgos y tu operación.\n• Define acciones y verifica su implementación.\n\nEn EICV Consultores te acompañamos a identificar brechas preventivas y transformarlas en acciones concretas: evaluación de riesgos, planes de emergencia y asesoría en gestión preventiva. Conversemos sobre lo que tu empresa necesita.\n\n📩 contacto@eicvconsultores.cl\n🌐 www.eicvconsultores.cl\n\n#ImagenReferencial · Recreación visual.\n\n#EICVConsultores #PrevencionDeRiesgos #SeguridadLaboral",
+    "advice": "Identifica, prioriza y cierra tus brechas.",
+    "cta": "Cuenta con EICV Consultores."
+  }
 ]
