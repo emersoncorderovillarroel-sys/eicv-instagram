@@ -75,6 +75,28 @@ class PublicadorTests(unittest.TestCase):
             ejecutar('publicar', self.root, self.api, persist, self.images)
         self.api.solicitar.assert_not_called()
 
+    def test_pieza_fechada_no_se_publica_antes_de_su_hora_ni_fuera_del_dia(self):
+        self.posts[0]['publish_date'] = '2026-11-16'
+        (self.root / 'calendario.json').write_text(json.dumps(self.posts), encoding='utf-8')
+        for day, hour, minute in [(15, 14, 0), (16, 12, 59), (16, 16, 0), (17, 13, 0)]:
+            with self.subTest(day=day, hour=hour, minute=minute):
+                now = datetime(2026, 11, day, hour, minute, tzinfo=timezone.utc)
+                ejecutar('publicar', self.root, self.api, Mock(), self.images, now=now)
+        self.api.comprobar_cuenta.assert_not_called()
+        self.api.solicitar.assert_not_called()
+
+    def test_fecha_vencida_no_desplaza_la_pieza_del_dia(self):
+        self.posts[0]['publish_date'] = '2026-11-16'
+        self.posts.append({**self.posts[0], 'publish_date': '2026-11-17', 'caption': 'Segunda pieza'})
+        (self.root / 'calendario.json').write_text(json.dumps(self.posts), encoding='utf-8')
+        self.api.solicitar.side_effect = [{'id': 'c1'}, {'status_code': 'FINISHED'}, {'id': 'm1'}]
+        persist = Mock()
+        now = datetime(2026, 11, 17, 13, tzinfo=timezone.utc)
+        ejecutar('publicar', self.root, self.api, persist, self.images, now=now)
+        self.images.assert_called_once_with('', 1)
+        self.assertEqual(self.api.solicitar.call_args_list[0].args[2]['caption'], 'Segunda pieza')
+        self.assertEqual(persist.call_args.args[0]['published'][0]['item'], 2)
+
     def test_cuenta_incorrecta_no_se_acepta(self):
         session = Mock()
         session.request.return_value.ok = True

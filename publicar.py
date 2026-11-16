@@ -144,23 +144,38 @@ def comprobar_imagen(base, index):
     return url
 
 
-def ejecutar(mode, root=ROOT, api=None, persist=escribir_estado, image_check=comprobar_imagen):
+def ejecutar(mode, root=ROOT, api=None, persist=escribir_estado, image_check=comprobar_imagen, now=None):
     posts = json.loads((root / 'calendario.json').read_text(encoding='utf-8'))
     state = json.loads((root / 'estado.json').read_text(encoding='utf-8'))
     idx = state['next_index']
     if not isinstance(idx, int) or idx < 0 or idx > len(posts):
         raise ErrorSeguro('El índice del calendario no es válido.')
     if idx == len(posts):
-        print('Las 12 publicaciones están completadas. El calendario no se repite.')
+        print('No quedan publicaciones en el calendario.')
         return
     pending = state.get('pending')
     if pending and pending.get('phase') == 'publishing':
         raise ErrorSeguro('Hay un envío pendiente de conciliación. Comprueba Instagram antes de reintentar; se bloquea para evitar duplicados.')
     if pending and pending.get('index') != idx:
         raise ErrorSeguro('El registro pendiente no coincide con el calendario.')
-    if mode == 'publicar' and publicado_hoy(state):
+    if mode == 'publicar' and publicado_hoy(state, now):
         print('Ya hay una publicación confirmada hoy en Chile. No se envía otra pieza.')
         return
+    local_now = (now or datetime.now(timezone.utc)).astimezone(ZoneInfo('America/Santiago'))
+    today = local_now.date().isoformat()
+    if mode == 'publicar' and 'publish_date' in posts[idx]:
+        if not 10 <= local_now.hour < 13:
+            print('Fuera del horario de publicación de Chile.')
+            return
+        while idx < len(posts) and posts[idx]['publish_date'] < today:
+            print(f'Pieza {idx + 1} omitida: venció su fecha programada.')
+            idx += 1
+        if idx == len(posts) or posts[idx]['publish_date'] != today:
+            print(f'No hay una publicación programada para {today}.')
+            return
+        if pending and pending['index'] != idx:
+            # Solo la fase prepared llega aquí. El contenedor aún no se ha enviado.
+            pending = None
     if api is None:
         required = ('IG_ACCESS_TOKEN', 'IG_USER_ID', 'PUBLIC_BASE_URL')
         missing = [key for key in required if not os.getenv(key)]
@@ -170,11 +185,17 @@ def ejecutar(mode, root=ROOT, api=None, persist=escribir_estado, image_check=com
                         os.getenv('IG_USERNAME', 'eicvconsultores'),
                         os.getenv('IG_API_VERSION', 'v26.0'), os.getenv('IG_API_BASE', 'auto'))
     api.comprobar_cuenta()
-    url = image_check(os.environ.get('PUBLIC_BASE_URL', ''), idx)
-    caption = posts[idx]['caption']
-    if not caption.strip() or len(caption) > 2200:
-        raise ErrorSeguro('El texto de la publicación no es válido.')
-    print(f'Pieza {idx + 1}/{len(posts)}: {posts[idx]["title"]}')
+    indices = range(idx, len(posts)) if mode == 'validar' else (idx,)
+    for position in indices:
+        post = posts[position]
+        asset = f'posts/{position + 1:02d}.jpg'
+        if post.get('asset', asset) != asset:
+            raise ErrorSeguro(f'Imagen incorrecta para la pieza {position + 1}.')
+        caption = post['caption']
+        if not caption.strip() or len(caption) > 2200:
+            raise ErrorSeguro(f'Texto inválido para la pieza {position + 1}.')
+        url = image_check(os.environ.get('PUBLIC_BASE_URL', ''), position)
+        print(f'Pieza {position + 1}/{len(posts)}: {post["title"]}')
     if mode == 'validar':
         print('Validación correcta. No se creó ni publicó ningún contenido en Instagram.')
         return
@@ -182,6 +203,7 @@ def ejecutar(mode, root=ROOT, api=None, persist=escribir_estado, image_check=com
         cid = pending['container_id']
     else:
         cid = api.solicitar('POST', f'{api.uid}/media', {'image_url': url, 'caption': caption})['id']
+        state['next_index'] = idx
         state['pending'] = {'index': idx, 'container_id': cid, 'phase': 'prepared'}
         persist(state, root)
     for attempt in range(15):
