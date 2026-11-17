@@ -144,7 +144,7 @@ def comprobar_imagen(base, index):
     return url
 
 
-def ejecutar(mode, root=ROOT, api=None, persist=escribir_estado, image_check=comprobar_imagen, now=None):
+def ejecutar(mode, root=ROOT, api=None, persist=escribir_estado, image_check=comprobar_imagen, now=None, *, manual=False):
     posts = json.loads((root / 'calendario.json').read_text(encoding='utf-8'))
     state = json.loads((root / 'estado.json').read_text(encoding='utf-8'))
     idx = state['next_index']
@@ -164,7 +164,7 @@ def ejecutar(mode, root=ROOT, api=None, persist=escribir_estado, image_check=com
     local_now = (now or datetime.now(timezone.utc)).astimezone(ZoneInfo('America/Santiago'))
     today = local_now.date().isoformat()
     if mode == 'publicar' and 'publish_date' in posts[idx]:
-        if not 10 <= local_now.hour < 13:
+        if not manual and not 10 <= local_now.hour < 13:
             print('Fuera del horario de publicación de Chile.')
             return
         while idx < len(posts) and posts[idx]['publish_date'] < today:
@@ -232,7 +232,7 @@ if __name__ == '__main__':
     parser = argparse.ArgumentParser()
     parser.add_argument('--modo', choices=('validar', 'publicar'), default='validar')
     try:
-        ejecutar(parser.parse_args().modo)
+        ejecutar(parser.parse_args().modo, manual=os.getenv('GITHUB_EVENT_NAME') == 'workflow_dispatch')
     except ErrorSeguro as error:
         print(str(error), file=sys.stderr)
         sys.exit(1)
