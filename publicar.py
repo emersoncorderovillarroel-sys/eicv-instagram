@@ -164,7 +164,7 @@ def ejecutar(mode, root=ROOT, api=None, persist=escribir_estado, image_check=com
     local_now = (now or datetime.now(timezone.utc)).astimezone(ZoneInfo('America/Santiago'))
     today = local_now.date().isoformat()
     if mode == 'publicar' and 'publish_date' in posts[idx]:
-        if not manual and not 10 <= local_now.hour < 13:
+        if not manual and not 10 <= local_now.hour < 22:
             print('Fuera del horario de publicación de Chile.')
             return
         while idx < len(posts) and posts[idx]['publish_date'] < today:
