@@ -78,7 +78,7 @@ class PublicadorTests(unittest.TestCase):
     def test_pieza_fechada_no_se_publica_antes_de_su_hora_ni_fuera_del_dia(self):
         self.posts[0]['publish_date'] = '2026-11-16'
         (self.root / 'calendario.json').write_text(json.dumps(self.posts), encoding='utf-8')
-        for day, hour, minute in [(15, 14, 0), (16, 12, 59), (16, 16, 0), (17, 13, 0)]:
+        for day, hour, minute in [(15, 14, 0), (16, 12, 59), (17, 1, 0), (17, 13, 0)]:
             with self.subTest(day=day, hour=hour, minute=minute):
                 now = datetime(2026, 11, day, hour, minute, tzinfo=timezone.utc)
                 ejecutar('publicar', self.root, self.api, Mock(), self.images, now=now)
@@ -91,7 +91,7 @@ class PublicadorTests(unittest.TestCase):
         (self.root / 'calendario.json').write_text(json.dumps(self.posts), encoding='utf-8')
         self.api.solicitar.side_effect = [{'id': 'c1'}, {'status_code': 'FINISHED'}, {'id': 'm1'}]
         persist = Mock()
-        now = datetime(2026, 11, 17, 13, tzinfo=timezone.utc)
+        now = datetime(2026, 11, 17, 20, tzinfo=timezone.utc)
         ejecutar('publicar', self.root, self.api, persist, self.images, now=now)
         self.images.assert_called_once_with('', 1)
         self.assertEqual(self.api.solicitar.call_args_list[0].args[2]['caption'], 'Segunda pieza')
