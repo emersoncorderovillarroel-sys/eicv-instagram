@@ -8,10 +8,12 @@ on:
         options: [validar, publicar]
         default: validar
   schedule:
-    - cron: '0 10 * * *'
+    - cron: '5 10 * * *'
       timezone: America/Santiago
     - cron: '17,47 10-12 * * *'
       timezone: America/Santiago
+    # Respaldo independiente del horario local del disparador (UTC).
+    - cron: '23 14,17,20,23 * * *'
 permissions:
   contents: write
 concurrency:
