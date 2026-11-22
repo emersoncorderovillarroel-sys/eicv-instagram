@@ -1,5 +1,5 @@
 {
-  "next_index": 18,
+  "next_index": 19,
   "published": [
     {
       "item": 1,
@@ -90,11 +90,11 @@
       "item": 18,
       "media_id": "17917409739504674",
       "published_at": "2026-11-21T13:03:05.314128+00:00"
+    },
+    {
+      "item": 19,
+      "media_id": "18118062659148688",
+      "published_at": "2026-11-22T13:01:10.316254+00:00"
     }
-  ],
-  "pending": {
-    "index": 18,
-    "container_id": "17991404315908152",
-    "phase": "publishing"
-  }
+  ]
 }
